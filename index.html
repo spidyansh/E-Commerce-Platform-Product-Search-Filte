@@ -15,13 +15,19 @@
     <section class="container">
       <form>
         <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" id="searchbox" placeholder="Search Products.." onkeyup="searchItem()"/>
+        <input
+          type="text"
+          name=""
+          id="search-item"
+          placeholder="Search Products.."
+          onkeyup="search()"
+        >
       </form>
 
       <div class="product-list" id="product-list">
         <div class="product">
           <img src="/images/tshirt.jpg" alt="" />
-          <div class="product-info">
+          <div class="p-details">
             <h3>Tshirt</h3>
             <h4>$45</h4>
           </div>

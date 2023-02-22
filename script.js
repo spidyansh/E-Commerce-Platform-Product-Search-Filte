@@ -1,14 +1,19 @@
-function searchIitem() {
-  let seacrhbox = document.getElementById("searchbox");
-  let productlist = document.getElementById("product-list");
-  let product = document.getElementsByClassName("product");
-  let productinfo = document.getElementsByTagName("h3");
+const search=()=> {
+  let searchbox = document.getElementById("search-item").value.toUpperCase();
+  let storeitems = document.getElementById("product-list");
+  let product = document.querySelectorAll("product");
+  let pname = storeitems.getElementsByTagName("h3");
 
-  for (i = 0; i < product.length; i++) {
-    if (seacrhbox.value === product[i].productinfo[0].innerHTML) {
-      product[i].style.display = "";
-    } else {
-      product[i].style.display = "none";
+  for (var i = 0; i < pname.length; i++) {
+    let match = product[i].getElementsByTagName("h3")[0];
+
+    if (match) {
+      let textvalue = match.textContent || match.innerHTML;
+      if (textvalue.toUpperCase().indexOf(searchbox) > -1) {
+        product[i].style.display = "";
+      } else {
+        product[i].style.display = "none";
+      }
     }
   }
 }
